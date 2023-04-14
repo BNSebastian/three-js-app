@@ -1,0 +1,194 @@
+body {
+    /* remove margins and scroll bars */
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    font-family: Sans-Serif;
+  
+    background-color: skyblue;
+    color: #444;
+  }
+
+  #navbar {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    justify-content: center; /* centers items horizontally */
+    align-items: center; /* centers items vertically */
+  }
+
+  #about {
+    background: linear-gradient(-45deg, #b1d0f1, #2bc6ff, #13f6bd);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    border-radius: 40px;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    margin-top: 40vh;
+    margin-left: 5vw;
+    height: 20vh;
+    width: 30vw;
+    transform:scaleX(0); /* squish it on the Y axis */
+    transform-origin: left; /* set origin to the left margin of the screen */
+    padding: 20px;
+    justify-content: center; /* centers items horizontally */
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  #projects {
+    opacity: 0.8;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    height: 80vh;
+    width: 90vw;
+    transform:scaleY(0); /* squish it on the Y axis */
+    transform-origin: bottom; /* set origin to the left margin of the screen */
+    justify-content: top; /* centers items horizontally */
+    padding: 20px;
+  }
+
+  #tech {
+    opacity: 0.8;
+    background: linear-gradient(-45deg, #0e4c8f, #2bc6ff, #13f6bd);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    border-radius: 40px;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    margin-top: 30vh;
+    margin-left: 50vw;
+    height: 40vh;
+    width: 45vw;
+    transform:scaleX(0); /* squish it on the Y axis */
+    transform-origin: right; /* set origin to the left margin of the screen */
+    padding: 20px;
+    justify-content: center; /* centers items horizontally */
+  }
+
+  #contact {
+    opacity: 0.8;
+    background: linear-gradient(-45deg, #1bddeb, #9ddcf2, #13f6bd);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    border-radius: 40px;
+    position: absolute;
+    z-index: 9998;
+    display: flex;
+    margin-top: 10vh;
+    margin-left: 37.5vw;
+    height: 20vh;
+    width: 25vw;
+    transform:scaleY(0); /* squish it on the Y axis */
+    transform-origin: top; /* set origin to the left margin of the screen */
+    padding: 20px;
+    justify-content: bottom; /* centers items horizontally */
+  }
+
+  #scene-container {
+    /* tell our scene container to take up the full page */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  
+    /*
+      Set the container's background color to the same as the scene's
+      background to prevent flashing on load
+    */
+    background-color: skyblue;
+    z-index:0;
+  }
+  
+
+.card {
+  width: 180px;
+  height: 250px;
+  background: #ffffff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-body{
+  z-index: 1;
+  justify-content: center;
+  color:white
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 183, 255)), to(rgb(255, 48, 255)));
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  -webkit-animation: rotBGimg 3s linear infinite;
+  animation: rotBGimg 3s linear infinite;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+@-webkit-keyframes rotBGimg {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotBGimg {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  ;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+/* .card:hover:before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 3.5s linear infinite;
+} */
