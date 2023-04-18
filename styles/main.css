@@ -1,12 +1,16 @@
+html {
+    /* set background color on the html element */
+    background-color: skyblue;
+}
+
 body {
     /* remove margins and scroll bars */
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
     text-align: center;
     font-size: 18px;
     font-family: Sans-Serif;
-
-    background-color: skyblue;
+    /* background-color: skyblue; */
     color: #444;
 }
 
@@ -67,6 +71,7 @@ body {
     margin-left: 5vw;
     /* height: 20vh; */
     width: 90vw;
+    overflow: auto;
     transform: scaleX(0);
     transform-origin: left;
     padding: 20px;
